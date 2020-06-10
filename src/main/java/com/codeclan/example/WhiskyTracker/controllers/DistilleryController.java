@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-//@RequestMapping(value = "/distilleries")
+@RequestMapping(value = "/distilleries")
 public class DistilleryController {
 
     @Autowired
     private DistilleryRepository distilleryRepository;
 
     //Get ALL distilleries
-    @GetMapping(value = "/distilleries")
+    @GetMapping
     public ResponseEntity<List<Distillery>> getAllDistilleries(){
         return new ResponseEntity<>(distilleryRepository.findAll(), HttpStatus.OK);
     }
