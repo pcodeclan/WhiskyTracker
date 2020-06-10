@@ -28,6 +28,7 @@ public class DistilleryController {
     }
 
     //Get all the distilleries for a particular region
+    //    Get all the whisky from a particular distillery that’s a specific age
     //distilleries?region=Highland
     @GetMapping
     public ResponseEntity<List<Distillery>> getAllDistilleriesByRegion(

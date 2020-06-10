@@ -10,6 +10,5 @@ import java.util.List;
 public interface WhiskyRepository extends JpaRepository<Whisky, Long> {
 //    Get all the whiskies for a particular year
     List<Whisky> findByYear(int year);
-//    Get all the whisky from a particular distillery that’s a specific age
 
 }

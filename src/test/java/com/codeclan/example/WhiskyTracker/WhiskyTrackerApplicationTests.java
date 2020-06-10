@@ -40,4 +40,10 @@ public class WhiskyTrackerApplicationTests {
 		List<Whisky> found = whiskyRepository.findByYear(2020);
 		assertEquals(1, found.size());
 	}
+
+	@Test
+	public void canFindInDistilleryAllWhiskiesByAge(){
+		List<Distillery> found = distilleryRepository.findByWhiskiesAge(15);
+		assertEquals(2, found.size());
+	}
 }
