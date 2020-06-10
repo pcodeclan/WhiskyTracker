@@ -1,6 +1,7 @@
 package com.codeclan.example.WhiskyTracker;
 
 import com.codeclan.example.WhiskyTracker.models.Distillery;
+import com.codeclan.example.WhiskyTracker.models.Whisky;
 import com.codeclan.example.WhiskyTracker.repositories.DistilleryRepository;
 import com.codeclan.example.WhiskyTracker.repositories.WhiskyRepository;
 import org.junit.Test;
@@ -34,4 +35,9 @@ public class WhiskyTrackerApplicationTests {
 		assertEquals(3, found.size());
 	}
 
+	@Test
+	public void canFindWhiskyByYear() {
+		List<Whisky> found = whiskyRepository.findByYear(2020);
+		assertEquals(1, found.size());
+	}
 }
