@@ -28,7 +28,6 @@ public class DistilleryController {
     }
 
     //Get all the distilleries for a particular region
-    //    Get all the whisky from a particular distillery that’s a specific age
     //distilleries?region=Highland
     @GetMapping
     public ResponseEntity<List<Distillery>> getAllDistilleriesByRegion(
@@ -38,6 +37,14 @@ public class DistilleryController {
             return new ResponseEntity<>(distilleryRepository.findByRegion(region), HttpStatus.OK);
         }
         return new ResponseEntity<>(distilleryRepository.findAll(), HttpStatus.OK);
+    }
+
+    //    Get all the whisky from a particular distillery that’s a specific age
+    @GetMapping(value = "/whiskies")
+    public ResponseEntity<List<Distillery>> findAllWhiskyFromDistilleryByAge(
+            @RequestParam(name="age") Integer age)
+    {
+        return new ResponseEntity<>(distilleryRepository.findByWhiskiesAge(age), HttpStatus.OK);
     }
 
 }
